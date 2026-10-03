@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Berry & Bean — кофе, ягоды и немного времени для себя."
+    />
+    <title>Berry & Bean — Найди свой ритуал</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="menu-link" href="#menu">MENU</a>
+      <a class="wordmark" href="#top" aria-label="Berry & Bean, на главную">Berry <span>&amp;</span> Bean</a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-grid" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Berry &amp; Bean</p>
+          <h1 id="hero-title">Найди свой<br />ритуал.</h1>
+          <p class="lead">Кофе, ягоды и немного времени для себя.</p>
+          <div class="button-row">
+            <a class="button button--dark" href="#ritual">Выбрать свой ритуал</a>
+            <a class="button button--text" href="#find-cafe">Найти кафе <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="visual visual--hero" aria-label="Место для будущего изображения кофе и ягод" role="img">
+          <span class="visual-label">ВИЗУАЛ / КОФЕ + ЯГОДЫ</span>
+          <span class="berry berry--one"></span><span class="berry berry--two"></span><span class="berry berry--three"></span>
+        </div>
+      </section>
+
+      <section class="ritual section-grid" id="ritual" aria-labelledby="ritual-title">
+        <div class="ritual-intro">
+          <p class="eyebrow">ТВОЙ ТЕМП</p>
+          <h2 id="ritual-title">Какой у тебя<br />сегодня момент?</h2>
+          <div class="ritual-options" role="tablist" aria-label="Выбор момента">
+            <button class="ritual-option is-active" type="button" role="tab" aria-selected="true" data-ritual="morning">Начать день</button>
+            <button class="ritual-option" type="button" role="tab" aria-selected="false" data-ritual="pause">Сделать паузу</button>
+            <button class="ritual-option" type="button" role="tab" aria-selected="false" data-ritual="slow">Замедлиться</button>
+            <button class="ritual-option" type="button" role="tab" aria-selected="false" data-ritual="together">Быть вместе</button>
+          </div>
+        </div>
+        <div class="ritual-feature" id="ritual-feature" role="tabpanel" aria-live="polite">
+          <div class="visual visual--ritual" aria-hidden="true"><span class="visual-label">ВИЗУАЛ / СОЧЕТАНИЕ</span></div>
+          <div class="ritual-feature__copy">
+            <p class="eyebrow" id="ritual-kicker">ДЛЯ НАЧАЛА</p>
+            <h3 id="ritual-name">Малиновое утро</h3>
+            <p id="ritual-description">Flat White + малиновый чизкейк</p>
+            <a href="#menu" class="inline-link">Смотреть в меню <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu" id="menu" aria-labelledby="menu-title">
+        <div class="section-grid menu-heading"><p class="eyebrow">МЕНЮ</p><h2 id="menu-title">Кофе + ягоды.<br />Созданы быть вместе.</h2></div>
+        <div class="product-grid">
+          <article class="product-card"><div class="visual product-visual visual--cherry" aria-label="Placeholder: Вишнёвый нуар" role="img"><span>ВИЗУАЛ / ВИШНЯ</span></div><div><h3>Вишнёвый нуар</h3><p>Мокко + шоколадный торт с вишней</p></div></article>
+          <article class="product-card"><div class="visual product-visual visual--blackberry" aria-label="Placeholder: Ежевичный бархат" role="img"><span>ВИЗУАЛ / ЕЖЕВИКА</span></div><div><h3>Ежевичный бархат</h3><p>Эспрессо + шоколадный брауни с ежевикой</p></div></article>
+          <article class="product-card"><div class="visual product-visual visual--strawberry" aria-label="Placeholder: Клубничные выходные" role="img"><span>ВИЗУАЛ / КЛУБНИКА</span></div><div><h3>Клубничные выходные</h3><p>Латте + клубничная тарталетка</p></div></article>
+          <article class="product-card"><div class="visual product-visual visual--raspberry" aria-label="Placeholder: Малиновое утро" role="img"><span>ВИЗУАЛ / МАЛИНА</span></div><div><h3>Малиновое утро</h3><p>Flat White + малиновый чизкейк</p></div></article>
+          <article class="product-card"><div class="visual product-visual visual--currant" aria-label="Placeholder: Садовая смородина" role="img"><span>ВИЗУАЛ / СМОРОДИНА</span></div><div><h3>Садовая смородина</h3><p>Кортадо + шоколадный эклер с чёрной смородиной</p></div></article>
+          <article class="product-card"><div class="visual product-visual visual--blueberry" aria-label="Placeholder: Черничное утро" role="img"><span>ВИЗУАЛ / ЧЕРНИКА</span></div><div><h3>Черничное утро</h3><p>Капучино + черничная тарталетка</p></div></article>
+        </div>
+      </section>
+
+      <section class="place section-grid" aria-labelledby="place-title">
+        <div class="visual visual--place" aria-label="Место для будущего изображения интерьера кафе" role="img"><span class="visual-label">ВИЗУАЛ / ПРОСТРАНСТВО КАФЕ</span></div>
+        <div class="place-copy"><p class="eyebrow">НАШЕ ПРОСТРАНСТВО</p><h2 id="place-title">Место для<br />твоей паузы.</h2><p>Свет, тёплое дерево, аромат свежего кофе и время, которое можно оставить себе.</p></div>
+      </section>
+
+      <section class="find-cafe section-grid" id="find-cafe" aria-labelledby="find-title">
+        <div><p class="eyebrow">НАЙТИ КАФЕ</p><h2 id="find-title">Будем рядом.</h2><p class="find-copy">Выбери удобное кафе, когда появится время для твоего ритуала.</p></div>
+        <div class="cafe-details" aria-label="Информация о кафе">
+          <div class="placeholder-detail"><span>ЛОКАЦИЯ</span><strong>Адрес кафе — placeholder</strong></div>
+          <div class="placeholder-detail"><span>ВРЕМЯ РАБОТЫ</span><strong>Часы работы — placeholder</strong></div>
+          <div class="placeholder-map" role="img" aria-label="Placeholder: карта кафе">КАРТА / PLACEHOLDER</div>
+        </div>
+      </section>
+
+      <section class="gift section-grid" aria-labelledby="gift-title">
+        <div class="gift-copy"><p class="eyebrow">ПОДАРОЧНЫЙ СЕРТИФИКАТ</p><h2 id="gift-title">Подарить<br />ритуал</h2><a class="button button--dark" href="#gift-certificate">Купить сертификат</a></div>
+        <div class="gift-certificate" id="gift-certificate" role="img" aria-label="Placeholder: подарочный сертификат Berry and Bean"><span>BERRY &amp; BEAN</span><small>ПОДАРОЧНЫЙ СЕРТИФИКАТ</small><em>PLACEHOLDER</em></div>
+      </section>
+
+      <section class="final-cta section-grid" aria-labelledby="cta-title">
+        <p class="eyebrow">BERRY &amp; BEAN</p><h2 id="cta-title">Найди время для<br />своего ритуала.</h2><div class="button-row"><a class="button button--light" href="#find-cafe">Найти кафе</a><a class="button button--outline" href="#menu">Посмотреть меню</a></div>
+      </section>
+    </main>
+    <footer><span>Berry &amp; Bean</span><span>Кофе, ягоды и немного времени для себя.</span></footer>
+  </body>
+</html>
