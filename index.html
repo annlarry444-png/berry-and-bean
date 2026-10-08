@@ -19,26 +19,72 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="menu-link" href="#menu">MENU</a>
-      <a class="wordmark" href="#top" aria-label="Berry & Bean, на главную">Berry <span>&amp;</span> Bean</a>
+      <nav class="top-nav" aria-label="Основная навигация">
+        <button class="top-nav__item" type="button" data-open-ritual aria-expanded="false" aria-controls="ritual-side-menu"><span class="top-nav__desktop-label">РИТУАЛ</span><span class="top-nav__mobile-label">МЕНЮ</span></button>
+        <button class="top-nav__item" type="button">ВКУСЫ</button>
+        <button class="top-nav__item" type="button">КАФЕ</button>
+        <button class="top-nav__item" type="button">ПЕКАРНЯ</button>
+        <button class="top-nav__item" type="button">СЕРТИФИКАТ</button>
+      </nav>
+      <a class="wordmark" href="#top" aria-label="Berry & Bean, на главную"><img src="logo2.svg" alt="Berry &amp; Bean" /></a>
     </header>
 
     <main id="top">
+    <div class="hero-stage">
+    <div class="ritual-scrim" data-close-ritual hidden></div>
+    <aside class="ritual-side-menu" id="ritual-side-menu" aria-label="Ритуал" aria-hidden="true" inert>
+      <div class="ritual-side-menu__mobile-header">
+        <button class="ritual-side-menu__close" type="button" data-close-ritual>ЗАКРЫТЬ</button>
+        <a class="ritual-side-menu__mobile-logo" href="#top" aria-label="Berry & Bean, на главную"><img src="logo2.svg" alt="Berry &amp; Bean" /></a>
+      </div>
+      <nav class="ritual-side-menu__main-nav" aria-label="Основная навигация">
+        <button class="ritual-side-menu__main-link" type="button" data-main-ritual aria-expanded="false"><span>Ритуал</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
+        <button class="ritual-side-menu__main-link" type="button"><span>Меню</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
+        <button class="ritual-side-menu__main-link" type="button"><span>Кафе</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
+        <button class="ritual-side-menu__main-link" type="button"><span>Пекарня</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
+        <button class="ritual-side-menu__main-link" type="button"><span>Подарочные карты</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
+      </nav>
+      <button class="ritual-side-menu__breadcrumb" type="button" data-back-main><span aria-hidden="true">←</span> РИТУАЛ</button>
+      <div class="ritual-side-menu__options" role="tablist" aria-label="Выберите ритуал">
+        <button class="ritual-side-menu__option is-active" type="button" role="tab" aria-selected="true" data-side-ritual="morning">Начать день</button>
+        <button class="ritual-side-menu__option" type="button" role="tab" aria-selected="false" data-side-ritual="pause">Сделать паузу</button>
+        <button class="ritual-side-menu__option" type="button" role="tab" aria-selected="false" data-side-ritual="together">Быть вместе</button>
+      </div>
+      <div class="ritual-side-menu__content" role="tabpanel" aria-live="polite">
+        <section class="ritual-side-menu__panel is-active" data-side-panel="morning" aria-label="Начать день">
+          <p class="ritual-side-menu__eyebrow">ПОПРОБУЙТЕ</p>
+          <div class="ritual-side-menu__cards">
+            <a class="ritual-side-menu__card" href="#product-blueberry"><img src="blueberry-morning.png" alt="" /><span>Черничное утро</span></a>
+            <a class="ritual-side-menu__card" href="#product-raspberry"><img src="raspberry-morning.png" alt="" /><span>Малиновое утро</span></a>
+          </div>
+        </section>
+        <section class="ritual-side-menu__panel" data-side-panel="pause" aria-label="Сделать паузу" hidden>
+          <p class="ritual-side-menu__eyebrow">ПОПРОБУЙТЕ</p>
+          <div class="ritual-side-menu__cards">
+            <a class="ritual-side-menu__card" href="#product-blackberry"><img src="blackberry-velvet.png" alt="" /><span>Ежевичный бархат</span></a>
+            <a class="ritual-side-menu__card" href="#product-currant"><img src="garden-currant.png" alt="" /><span>Садовая смородина</span></a>
+          </div>
+        </section>
+        <section class="ritual-side-menu__panel" data-side-panel="together" aria-label="Быть вместе" hidden>
+          <p class="ritual-side-menu__eyebrow">ПОПРОБУЙТЕ</p>
+          <div class="ritual-side-menu__cards">
+            <a class="ritual-side-menu__card" href="#product-strawberry"><img src="strawberry-weekend.png" alt="" /><span>Клубничные выходные</span></a>
+            <a class="ritual-side-menu__card" href="#product-cherry"><img src="cherry-noir.png" alt="" /><span>Вишнёвый нуар</span></a>
+          </div>
+        </section>
+      </div>
+    </aside>
+
       <section class="hero section-grid" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Berry &amp; Bean</p>
-          <h1 id="hero-title">Найди свой<br />ритуал.</h1>
-          <p class="lead">Кофе, ягоды и немного времени для себя.</p>
+          <h1 id="hero-title"><span>Найди</span> <span>свой</span> <span>ритуал</span></h1>
+          <p class="lead hero-subtitle"><span>Кофе, ягоды</span> <span>и немного времени для себя</span></p>
           <div class="button-row">
-            <a class="button button--dark" href="#ritual">Выбрать свой ритуал</a>
-            <a class="button button--text" href="#find-cafe">Найти кафе <span aria-hidden="true">→</span></a>
+            <a class="button button--dark" href="#find-cafe">Найти кафе</a>
           </div>
         </div>
-        <div class="visual visual--hero" aria-label="Место для будущего изображения кофе и ягод" role="img">
-          <span class="visual-label">ВИЗУАЛ / КОФЕ + ЯГОДЫ</span>
-          <span class="berry berry--one"></span><span class="berry berry--two"></span><span class="berry berry--three"></span>
-        </div>
       </section>
+    </div>
 
       <section class="ritual section-grid" id="ritual" aria-labelledby="ritual-title">
         <div class="ritual-intro">
@@ -65,12 +111,12 @@
       <section class="menu" id="menu" aria-labelledby="menu-title">
         <div class="section-grid menu-heading"><p class="eyebrow">МЕНЮ</p><h2 id="menu-title">Кофе + ягоды.<br />Созданы быть вместе.</h2></div>
         <div class="product-grid">
-          <article class="product-card"><div class="visual product-visual visual--cherry" aria-label="Placeholder: Вишнёвый нуар" role="img"><span>ВИЗУАЛ / ВИШНЯ</span></div><div><h3>Вишнёвый нуар</h3><p>Мокко + шоколадный торт с вишней</p></div></article>
-          <article class="product-card"><div class="visual product-visual visual--blackberry" aria-label="Placeholder: Ежевичный бархат" role="img"><span>ВИЗУАЛ / ЕЖЕВИКА</span></div><div><h3>Ежевичный бархат</h3><p>Эспрессо + шоколадный брауни с ежевикой</p></div></article>
-          <article class="product-card"><div class="visual product-visual visual--strawberry" aria-label="Placeholder: Клубничные выходные" role="img"><span>ВИЗУАЛ / КЛУБНИКА</span></div><div><h3>Клубничные выходные</h3><p>Латте + клубничная тарталетка</p></div></article>
-          <article class="product-card"><div class="visual product-visual visual--raspberry" aria-label="Placeholder: Малиновое утро" role="img"><span>ВИЗУАЛ / МАЛИНА</span></div><div><h3>Малиновое утро</h3><p>Flat White + малиновый чизкейк</p></div></article>
-          <article class="product-card"><div class="visual product-visual visual--currant" aria-label="Placeholder: Садовая смородина" role="img"><span>ВИЗУАЛ / СМОРОДИНА</span></div><div><h3>Садовая смородина</h3><p>Кортадо + шоколадный эклер с чёрной смородиной</p></div></article>
-          <article class="product-card"><div class="visual product-visual visual--blueberry" aria-label="Placeholder: Черничное утро" role="img"><span>ВИЗУАЛ / ЧЕРНИКА</span></div><div><h3>Черничное утро</h3><p>Капучино + черничная тарталетка</p></div></article>
+          <article class="product-card" id="product-cherry"><div class="visual product-visual visual--cherry" aria-label="Placeholder: Вишнёвый нуар" role="img"><span>ВИЗУАЛ / ВИШНЯ</span></div><div><h3>Вишнёвый нуар</h3><p>Мокко + шоколадный торт с вишней</p></div></article>
+          <article class="product-card" id="product-blackberry"><div class="visual product-visual visual--blackberry" aria-label="Placeholder: Ежевичный бархат" role="img"><span>ВИЗУАЛ / ЕЖЕВИКА</span></div><div><h3>Ежевичный бархат</h3><p>Эспрессо + шоколадный брауни с ежевикой</p></div></article>
+          <article class="product-card" id="product-strawberry"><div class="visual product-visual visual--strawberry" aria-label="Placeholder: Клубничные выходные" role="img"><span>ВИЗУАЛ / КЛУБНИКА</span></div><div><h3>Клубничные выходные</h3><p>Латте + клубничная тарталетка</p></div></article>
+          <article class="product-card" id="product-raspberry"><div class="visual product-visual visual--raspberry" aria-label="Placeholder: Малиновое утро" role="img"><span>ВИЗУАЛ / МАЛИНА</span></div><div><h3>Малиновое утро</h3><p>Flat White + малиновый чизкейк</p></div></article>
+          <article class="product-card" id="product-currant"><div class="visual product-visual visual--currant" aria-label="Placeholder: Садовая смородина" role="img"><span>ВИЗУАЛ / СМОРОДИНА</span></div><div><h3>Садовая смородина</h3><p>Кортадо + шоколадный эклер с чёрной смородиной</p></div></article>
+          <article class="product-card" id="product-blueberry"><div class="visual product-visual visual--blueberry" aria-label="Placeholder: Черничное утро" role="img"><span>ВИЗУАЛ / ЧЕРНИКА</span></div><div><h3>Черничное утро</h3><p>Капучино + черничная тарталетка</p></div></article>
         </div>
       </section>
 
