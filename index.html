@@ -26,7 +26,7 @@
         <button class="top-nav__item" type="button">ПЕКАРНЯ</button>
         <button class="top-nav__item" type="button">СЕРТИФИКАТ</button>
       </nav>
-      <a class="wordmark" href="#top" aria-label="Berry & Bean, на главную"><img src="logo2.svg" alt="Berry &amp; Bean" /></a>
+      <a class="wordmark" href="#top" aria-label="Berry & Bean, на главную"><img src="logo2_mono.svg" alt="Berry &amp; Bean" /></a>
     </header>
 
     <main id="top">
@@ -38,11 +38,11 @@
         <a class="ritual-side-menu__mobile-logo" href="#top" aria-label="Berry & Bean, на главную"><img src="logo2.svg" alt="Berry &amp; Bean" /></a>
       </div>
       <nav class="ritual-side-menu__main-nav" aria-label="Основная навигация">
-        <button class="ritual-side-menu__main-link" type="button" data-main-ritual aria-expanded="false"><span>Ритуал</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
-        <button class="ritual-side-menu__main-link" type="button"><span>Меню</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
-        <button class="ritual-side-menu__main-link" type="button"><span>Кафе</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
-        <button class="ritual-side-menu__main-link" type="button"><span>Пекарня</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
-        <button class="ritual-side-menu__main-link" type="button"><span>Подарочные карты</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
+        <button class="ritual-side-menu__main-link" type="button" data-main-ritual aria-expanded="false"><span>РИТУАЛ</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
+        <button class="ritual-side-menu__main-link" type="button"><span>ВКУСЫ</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
+        <button class="ritual-side-menu__main-link" type="button"><span>КАФЕ</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
+        <button class="ritual-side-menu__main-link" type="button"><span>ПЕКАРНЯ</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
+        <button class="ritual-side-menu__main-link" type="button"><span>СЕРТИФИКАТ</span><span class="ritual-side-menu__arrow" aria-hidden="true">→</span></button>
       </nav>
       <button class="ritual-side-menu__breadcrumb" type="button" data-back-main><span aria-hidden="true">←</span> РИТУАЛ</button>
       <div class="ritual-side-menu__options" role="tablist" aria-label="Выберите ритуал">
@@ -80,7 +80,7 @@
           <h1 id="hero-title"><span>Найди</span> <span>свой</span> <span>ритуал</span></h1>
           <p class="lead hero-subtitle"><span>Кофе, ягоды</span> <span>и немного времени для себя</span></p>
           <div class="button-row">
-            <a class="button button--dark" href="#find-cafe">Найти кафе</a>
+            <a class="button button--dark" href="#find-cafe">ВЫБРАТЬ</a>
           </div>
         </div>
       </section>
@@ -88,24 +88,34 @@
 
       <section class="ritual section-grid" id="ritual" aria-labelledby="ritual-title">
         <div class="ritual-intro">
-          <p class="eyebrow">ТВОЙ ТЕМП</p>
           <h2 id="ritual-title">Какой у тебя<br />сегодня момент?</h2>
-          <div class="ritual-options" role="tablist" aria-label="Выбор момента">
-            <button class="ritual-option is-active" type="button" role="tab" aria-selected="true" data-ritual="morning">Начать день</button>
-            <button class="ritual-option" type="button" role="tab" aria-selected="false" data-ritual="pause">Сделать паузу</button>
-            <button class="ritual-option" type="button" role="tab" aria-selected="false" data-ritual="slow">Замедлиться</button>
-            <button class="ritual-option" type="button" role="tab" aria-selected="false" data-ritual="together">Быть вместе</button>
+          <div class="ritual-lower">
+            <div class="ritual-options" aria-label="Ритуалы">
+              <button class="ritual-item is-active" type="button" aria-pressed="true" data-ritual="morning">Начать день</button>
+              <button class="ritual-item" type="button" aria-pressed="false" data-ritual="pause">Сделать паузу</button>
+              <button class="ritual-item" type="button" aria-pressed="false" data-ritual="together">Быть вместе</button>
+            </div>
+            <div class="ritual-feature" id="ritual-feature">
+              <div class="ritual-flavors" aria-label="Вкусы">
+                <button class="ritual-flavor is-active" type="button" aria-pressed="true" data-ritual="morning" data-flavor="blueberry">ЧЕРНИЧНОЕ УТРО</button>
+                <button class="ritual-flavor" type="button" aria-pressed="false" data-ritual="morning" data-flavor="raspberry">МАЛИНОВОЕ УТРО</button>
+                <button class="ritual-flavor" type="button" aria-pressed="false" data-ritual="pause" data-flavor="blackberry" hidden>ЕЖЕВИЧНЫЙ БАРХАТ</button>
+                <button class="ritual-flavor" type="button" aria-pressed="false" data-ritual="pause" data-flavor="currant" hidden>САДОВАЯ СМОРОДИНА</button>
+                <button class="ritual-flavor" type="button" aria-pressed="false" data-ritual="together" data-flavor="cherry" hidden>ВИШНЁВЫЙ НУАР</button>
+                <button class="ritual-flavor" type="button" aria-pressed="false" data-ritual="together" data-flavor="strawberry" hidden>КЛУБНИЧНЫЕ ВЫХОДНЫЕ</button>
+              </div>
+              <div class="ritual-feature__copy">
+                <p class="ritual-product-name">Капучино + черничная тарталетка</p>
+                <p class="ritual-description">Капучино с нежной молочной текстурой помогает начать день мягко, сохраняя бодрящий эффект кофеина. Черника добавляет ягодную свежесть и клетчатку, а тарталетка — приятную сладость и&nbsp;насыщенность. Сочетание для утра, когда хочется проснуться без&nbsp;резкого старта.</p>
+              </div>
+              <div class="ritual-actions">
+                <a class="ritual-button ritual-button--collection" href="#menu">КОЛЛЕКЦИЯ ВКУСОВ</a>
+                <button class="ritual-button ritual-button--order" type="button">ЗАКАЗАТЬ <svg aria-hidden="true" width="12" height="8" viewBox="0 0 12 8"><path d="M0 4h11M8 1l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1" /></svg></button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="ritual-feature" id="ritual-feature" role="tabpanel" aria-live="polite">
-          <div class="visual visual--ritual" aria-hidden="true"><span class="visual-label">ВИЗУАЛ / СОЧЕТАНИЕ</span></div>
-          <div class="ritual-feature__copy">
-            <p class="eyebrow" id="ritual-kicker">ДЛЯ НАЧАЛА</p>
-            <h3 id="ritual-name">Малиновое утро</h3>
-            <p id="ritual-description">Flat White + малиновый чизкейк</p>
-            <a href="#menu" class="inline-link">Смотреть в меню <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
+        <img class="ritual-image" src="blueberry-morning.png" alt="Капучино и черничная тарталетка" />
       </section>
 
       <section class="menu" id="menu" aria-labelledby="menu-title">

@@ -28,6 +28,92 @@ options.forEach((option) => {
   });
 });
 
+const flavorOptions = document.querySelectorAll('.ritual-flavor');
+const ritualOptions = document.querySelectorAll('.ritual-options [data-ritual]');
+const flavorName = document.querySelector('.ritual-product-name');
+const flavorDescription = document.querySelector('.ritual-description');
+const flavorImage = document.querySelector('.ritual-image');
+const flavorPairs = {
+  blueberry: {
+    ritual: 'morning',
+    subtitle: 'Капучино + черничная тарталетка',
+    description: 'Капучино с нежной молочной текстурой помогает начать день мягко, сохраняя бодрящий эффект кофеина. Черника добавляет ягодную свежесть и клетчатку, а тарталетка — приятную сладость и\u00a0насыщенность. Сочетание для утра, когда хочется проснуться без\u00a0резкого старта.',
+    image: 'blueberry-morning.png',
+    alt: 'Капучино и черничная тарталетка',
+  },
+  raspberry: {
+    ritual: 'morning',
+    subtitle: 'Флэт-уайт + малиновый чизкейк',
+    description: 'Флэт-уайт сочетает насыщенный эспрессо с шелковистой текстурой молока — кофе помогает проснуться, но воспринимается мягче. Малина добавляет яркую кислинку, витамин C и клетчатку, а творожная основа чизкейка — белок и нежность. Хороший вариант для спокойного, но бодрого начала дня.',
+    image: 'raspberry-morning.png',
+    alt: 'Флэт-уайт и малиновый чизкейк',
+  },
+  blackberry: {
+    ritual: 'pause',
+    subtitle: 'Эспрессо + шоколадный брауни с ежевикой',
+    description: 'Эспрессо помогает вернуть бодрость, а насыщенный шоколадный брауни с ежевикой добавляет энергии и удовольствия. Сочетание для короткой паузы, чтобы отвлечься от дел и с новыми силами вернуться к ним.',
+    image: 'blackberry-velvet.png',
+    alt: 'Эспрессо и шоколадный брауни с ежевикой',
+  },
+  currant: {
+    ritual: 'pause',
+    subtitle: 'Кортадо + шоколадный эклер с чёрной смородиной',
+    description: 'Мягкость кортадо смягчает насыщенный кофейный вкус, а шоколадный эклер с чёрной смородиной добавляет яркую ягодную кислинку. Небольшой перерыв, чтобы выдохнуть, переключиться и продолжить день в своём ритме.',
+    image: 'garden-currant.png',
+    alt: 'Кортадо и шоколадный эклер с чёрной смородиной',
+  },
+  cherry: {
+    ritual: 'together',
+    subtitle: 'Мокко + шоколадный торт с вишней',
+    description: 'Мокко с насыщенным шоколадным вкусом и торт с вишнёвой начинкой создают идеальное сочетание для неспешного разговора. Для свидания, встречи с близкими или выходного, который хочется провести вместе.',
+    image: 'cherry-noir.png',
+    alt: 'Мокко и шоколадный торт с вишней',
+  },
+  strawberry: {
+    ritual: 'together',
+    subtitle: 'Латте + клубничная тарталетка',
+    description: 'Нежный латте и тарталетка со спелой клубникой — сочетание для тёплых встреч и маленьких радостей. Закажите по чашке кофе, поделитесь новостями и позвольте себе никуда не торопиться.',
+    image: 'strawberry-weekend.png',
+    alt: 'Латте и тарталетка со спелой клубникой',
+  },
+};
+
+const selectedFlavor = { morning: 'blueberry', pause: 'blackberry', together: 'cherry' };
+function selectFlavor(flavorId) {
+  const pair = flavorPairs[flavorId];
+  if (!pair) return;
+  selectedFlavor[pair.ritual] = flavorId;
+  flavorOptions.forEach((item) => {
+    const active = item.dataset.flavor === flavorId;
+    item.classList.toggle('is-active', active);
+    item.setAttribute('aria-pressed', String(active));
+  });
+  flavorName.textContent = pair.subtitle;
+  flavorDescription.textContent = pair.description;
+  flavorImage.src = pair.image;
+  flavorImage.alt = pair.alt;
+}
+
+function selectRitual(ritualId) {
+  if (!selectedFlavor[ritualId]) return;
+  ritualOptions.forEach((item) => {
+    const active = item.dataset.ritual === ritualId;
+    item.classList.toggle('is-active', active);
+    item.setAttribute('aria-pressed', String(active));
+  });
+  flavorOptions.forEach((item) => {
+    item.hidden = item.dataset.ritual !== ritualId;
+  });
+  selectFlavor(selectedFlavor[ritualId]);
+}
+
+ritualOptions.forEach((option) => {
+  option.addEventListener('click', () => selectRitual(option.dataset.ritual));
+});
+flavorOptions.forEach((option) => {
+  option.addEventListener('click', () => selectFlavor(option.dataset.flavor));
+});
+
 const ritualMenu = document.querySelector('#ritual-side-menu');
 const ritualTrigger = document.querySelector('[data-open-ritual]');
 const ritualScrim = document.querySelector('.ritual-scrim');
